@@ -16,7 +16,7 @@ public class EmojiParserTest {
 		caller = new Callable() {
 			@Override
 			public String assemble(List<Integer> emojiCodePoints) {
-				StringBuilder builder = new StringBuilder("<img src='http://v14.pcbaby.com.cn/emoji/");
+				StringBuilder builder = new StringBuilder("<img src='http://xxx/emoji/");
 				for (int i = 0; i < emojiCodePoints.size(); i++) {
 					int cp = emojiCodePoints.get(i);
 					if (cp > 0xFFFF) {
@@ -44,8 +44,8 @@ public class EmojiParserTest {
      	
      	System.out.println(EmojiParser.parse(builder.toString(), caller).toString());
      	//128105,8205,10084,65039,8205,128139,8205,128104
-     	String result = "<img src='http://v14.pcbaby.com.cn/emoji/1f6c0-1f3fd.png' />"
-     			+ "<img src='http://v14.pcbaby.com.cn/emoji/1f6c0-1f3fd.png' />";
+     	String result = "<img src='http://xxx/emoji/1f6c0-1f3fd.png' />"
+     			+ "<img src='http://xxx/emoji/1f6c0-1f3fd.png' />";
      	Assert.assertEquals(EmojiParser.parse(builder.toString(), caller).toString(), result);
 	}
 }
